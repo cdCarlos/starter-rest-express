@@ -1,2 +1,3 @@
-# ccblog
-Your own personal blog at a command line distance
+# starter-rest-express
+
+Starter REST project using Express & TypeScript
