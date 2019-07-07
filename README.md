@@ -35,7 +35,7 @@ When running in production environments, instead of creating the `.env` file, yo
 $ PORT=239482 USER_KEY=foobar node app.js
 ```
 
-> **NOTE:** how you define environment variables depends on your OS. Search
+> **NOTE:** how you define environment variables depends on your OS. Search for appropriate documentation to do so.
 
 ### Run
 
