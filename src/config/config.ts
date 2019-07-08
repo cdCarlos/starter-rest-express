@@ -8,5 +8,8 @@ export const AppConfig: any = {
         HEADERS:
             process.env.CORS_HEADERS ||
             'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    },
+    jwt: {
+        SECRET: process.env.JWT_SECRET || 'z3DxqTbr5xnmqLGtHWn534Tj'
     }
 };
