@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "6a2e1883-4868-4e50-873e-1d3a51244daf",
+		"name": "starter-rest-express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "default",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								""
+							]
+						},
+						"description": "Root route"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v0/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/v0/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v0",
+								""
+							]
+						},
+						"description": "Root route"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			}
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "invalid",
+					"item": [
+						{
+							"name": "/api/v0/auth (no header)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/v0/auth/verify",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v0",
+										"auth",
+										"verify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v0/auth (malformed header)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQHdvcmxkLmNvbSIsImlhdCI6MTU2MTgzNzc5MH0.aA6CBm1uWTY7TzAxDSdMBXMIR52mn0Ys_64YJqVZPF4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/api/v0/auth/verify",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v0",
+										"auth",
+										"verify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v0/auth (invalid token)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQHdvcmxkLmNvbSIsImlhdCI6MTU2MTgzNzc5MH0.aA6CBm1uWTY7TzAxDSdMBXMIR52mn0Ys_64YJqVZPF4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/v0/auth/verify",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v0",
+										"auth",
+										"verify"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "noauth"
+					},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "valid",
+					"item": [
+						{
+							"name": "/api/v0/auth",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQHdvcmxkLmNvbSIsImlhdCI6MTU2MTgzNzc5MH0.aA6CBm1uWTY7TzAxDSdMBXMIR52mn0Ys_64YJqVZPF4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/v0/auth/verify",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v0",
+										"auth",
+										"verify"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "noauth"
+					},
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQHdvcmxkLmNvbSIsImlhdCI6MTU2MTgzNzc5MH0.aA6CBm1uWTY7TzAxDSdMBXMIR52mn0Ys_64YJqVZPF4",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2d99cdd5-f2e0-46a1-9ba3-ce90e5c895c4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c63a4bbc-f357-42ca-94d2-3c80b3819ab3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c4acbd5c-86bb-48e8-986b-3afb184d6bd3",
+			"key": "server",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
